@@ -1,9 +1,9 @@
-import express, { Request, Response } from "express"
+import express from "express"
+import { registerController, loginController } from "../controllers/user"
+
 const router = express.Router()
 
-router.get("/", (req: Request, res: Response) => {
-  res.send("bura users api")
-  // res.json({ message: "Hello from /users endpoint!" })
-})
+router.post("/register", registerController)
+router.post("/login", loginController)
 
 export default router
